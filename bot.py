@@ -15,14 +15,7 @@ def startMsg(chat_id, first_name):
 
 def errorMsg(chat_id, error_type):
 	if error_type == 'too_long':
-		bot.sendMessage(chat_id, '‼️ *Oops! Video too long to convert!*\n'
-			'Order something 30 minutes or less.', parse_mode= 'Markdown')
-
-	if error_type == 'spotify_command':
-		bot.sendMessage(chat_id, 'اذا احببت تجربة ميزة التنزيل من اليوتيوب اكتب كلمة*بحث* وبعدها اسم الاغنية', parse_mode= 'Markdown')
-
-	if error_type == 'invalid_command':
-		bot.sendMessage(chat_id, 'اذا احببت تجربة ميزة التنزيل من اليوتيوب اكتب كلمة*بحث* وبعدها اسم الاغنية', parse_mode= 'Markdown')
+		bot.sendMessage(chat_id, 'يرجى اختيار الفنان واسم الاغنية بشكل جيد ', parse_mode= 'Markdown')
 
 def downloadMusic(file_name, link):
 	ydl_opts = {
@@ -61,9 +54,8 @@ def validMusicInput(userInput, chat_id, chat_type):
 
 			bot.sendAudio(chat_id,audio=open(file_name,'rb'))
 			bot.deleteMessage((chat_id, DownloadingMsg['message_id']))
-			bot.sendMessage(chat_id, '*تم التنزيل بنجاح*')
-
-			print ("Sucess!")
+			bot.sendMessage(chat_id, '*تم التنزيل بنجاح*', parse_mode= 'Markdown')
+			print ("نجح")
 			os.remove(file_name)
 
 		else:
