@@ -19,7 +19,7 @@ def errorMsg(chat_id, error_type):
 			'Order something 30 minutes or less.', parse_mode= 'Markdown')
 
 	if error_type == 'spotify_command':
-		bot.sendMessage(chat_id, "اذا احببت تجربة ميزة التنزيل من اليوتيوب اكتب كلمة*بحث* وبعدها اسم الاغنية"', parse_mode= 'Markdown')
+		bot.sendMessage(chat_id, 'اذا احببت تجربة ميزة التنزيل من اليوتيوب اكتب كلمة*بحث* وبعدها اسم الاغنية', parse_mode= 'Markdown')
 
 	if error_type == 'invalid_command':
 		bot.sendMessage(chat_id, 'اذا احببت تجربة ميزة التنزيل من اليوتيوب اكتب كلمة*بحث* وبعدها اسم الاغنية', parse_mode= 'Markdown')
